@@ -2,8 +2,7 @@ extern crate sodiumoxide;
 
 use sodiumoxide::crypto::secretbox;
 use std::fs::{self, File};
-use std::io::{self, Write};
-use sodiumoxide::randombytes::randombytes;
+use std::io::Write;
 
 fn main() {
     sodiumoxide::init().unwrap();
