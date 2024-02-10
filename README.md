@@ -23,9 +23,11 @@ Then, compile the project for development using Cargo:
 cargo build 
 ```
 
-or
+or to build for production:
 
-The compiled binary will be located in `./target/release/.`
+```bash
+cargo build --release
+```
 
 ## Usage
 
