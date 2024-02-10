@@ -1,6 +1,6 @@
-extern crate sodiumoxide;
+mod encrypt;
 
-use sodiumoxide::crypto::secretbox;
+use crate::encrypt::encrypt_note;
 use std::fs::{self, File};
 use std::io::Write;
 
@@ -8,8 +8,8 @@ fn main() {
     sodiumoxide::init().unwrap();
 
     // Define file paths
-    let input_file_path = "input_note.txt";
-    let output_file_path = "encrypted_note.txt";
+    let input_file_path = "/Users/jacobleone/Desktop/dossier.txt";
+    let output_file_path = "/Users/jacobleone/Desktop/dossier-encrypted.txt";
 
     // Read the note from the input file
     let note = fs::read_to_string(input_file_path)
@@ -30,11 +30,4 @@ fn main() {
     println!("IMPORTANT: For decryption, you'll need the following:");
     println!("Nonce: {:?}", nonce);
     println!("Key: {:?}", key);
-}
-
-fn encrypt_note(note: &str) -> (Vec<u8>, secretbox::Nonce, secretbox::Key) {
-    let key = secretbox::gen_key();
-    let nonce = secretbox::gen_nonce();
-    let encrypted_note = secretbox::seal(note.as_bytes(), &nonce, &key);
-    (encrypted_note, nonce, key)
 }
