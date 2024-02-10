@@ -1,7 +1,6 @@
 use sodiumoxide::crypto::secretbox;
 use std::fs::File;
 use std::io::{self, Read};
-use hex::FromHex; // Ensure the `hex` crate is added to your Cargo.toml dependencies
 
 pub fn decrypt_note(encrypted_note: &[u8], nonce: &secretbox::Nonce, key: &secretbox::Key) -> Result<String, io::Error> {
     secretbox::open(encrypted_note, nonce, key)

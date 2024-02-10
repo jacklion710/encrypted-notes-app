@@ -6,7 +6,6 @@ use crate::decrypt::{decrypt_note, read_keys};
 use std::env;
 use std::fs::{self, File};
 use std::io::Write;
-use std::path::PathBuf;
 
 fn main() {
     sodiumoxide::init().unwrap();
