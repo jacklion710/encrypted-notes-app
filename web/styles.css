@@ -1,0 +1,70 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: #121212;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.container {
+    width: 80%;
+    max-width: 600px;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+#drop_zone {
+    border: 2px dashed #444;
+    padding: 20px;
+    margin: 10px 0;
+    cursor: pointer;
+    background-color: #1e1e1e;
+}
+
+#drop_zone p {
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+button {
+    background-color: #007bff;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px 5px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+output {
+    display: block;
+    width: 100%;
+    height: 100px;
+    margin-top: 20px;
+    overflow-y: auto;
+    background: #333;
+    color: #9cdf7c;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+/* Add some edginess with some more specific styling */
+#encryptBtn {
+    background-color: #28a745;
+}
+
+#decryptBtn {
+    background-color: #dc3545;
+}
